@@ -12,7 +12,6 @@
 				<li class="nav-item">
 					{% if app.user %}
 						<a class="nav-link" href='{{ path("app_logout") }}'>Log out</a>
-						<p>Vous êtes connecté(e)</p>
 					{% else %}
 						<a class="nav-link" href='{{ path("app_login") }}'>Log in</a>
 					{% endif %}
@@ -36,6 +35,11 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link disabled">Disabled</a>
+				</li>
+				<li class="nav-item">
+					{% if app.user %}
+						<img alt='logo' style="height : 50px; border : 1px solid black" class='rounded-pill' src={{app.user.image}}>
+					{% endif %}
 				</li>
 			</ul>
 			<form class="d-flex" role="search">
