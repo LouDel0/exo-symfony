@@ -4,6 +4,9 @@
 {% endblock %}
 
 {% block body %}
+
+	{{include ('./nav.html.twig')}}
+
 	<style>
 		.example-wrapper {
 			margin: 1em auto;
@@ -49,6 +52,7 @@
 		</table>
 
 		{{liste.client1.prenom}}
+
 
 		<hr>
 		This friendly message is coming from:
