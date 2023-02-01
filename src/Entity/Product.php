@@ -12,7 +12,7 @@ class Product
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id_product = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name = null;
@@ -31,11 +31,11 @@ class Product
 
     #[ORM\ManyToOne(inversedBy: 'products')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Category $category_id = null;
+    private ?Category $id_category = null;
 
     public function getId(): ?int
     {
-        return $this->id;
+        return $this->id_product;
     }
 
     public function getName(): ?string
@@ -100,12 +100,12 @@ class Product
 
     public function getCategoryId(): ?Category
     {
-        return $this->category_id;
+        return $this->id_category;
     }
 
-    public function setCategoryId(?Category $category_id): self
+    public function setCategoryId(?Category $id_category): self
     {
-        $this->category_id = $category_id;
+        $this->id_category = $id_category;
 
         return $this;
     }
