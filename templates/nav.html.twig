@@ -16,6 +16,12 @@
 						<a class="nav-link" href='{{ path("app_login") }}'>Log in</a>
 					{% endif %}
 				</li>
+				{% if app.user %}
+					{% else %}
+						<li class="nav-item">
+							<a class="nav-link" href='{{ path("app_register") }}'>Register</a>
+						</li>
+				{% endif %}
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Tools
@@ -29,7 +35,10 @@
 						</li>
 						<li><hr class="dropdown-divider"></li>
 						<li>
-							<a class="dropdown-item" href="#">Something else here</a>
+							<a class="dropdown-item" href='{{ path("app_crud_category_index") }}'>CRUD Category</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href='{{ path("app_crud_product_index") }}'>CRUD Product</a>
 						</li>
 					</ul>
 				</li>
@@ -37,7 +46,7 @@
 					<a class="nav-link disabled">Disabled</a>
 				</li>
 			</ul>
-			<div class="d-flex">
+			<div class="d-flex" style="margin-right : 100px">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,7 +55,7 @@
 								{{app.user.lastname}}
 							{% endif %}
 						</a>
-						<ul class="dropdown-menu">
+						<ul class="dropdown-menu" style="margin-right">
 							<li class="nav-item">
 								{% if app.user %}
 									<a class="dropdown-item" href='{{ path("app_logout") }}'>Log out</a>
