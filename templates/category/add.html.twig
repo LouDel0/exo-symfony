@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Category
+{% endblock %}
+
+{% block body %}
+	{{include ('./nav.html.twig')}}
+
+
+	<div class="container">
+		<h1 class="text-center mt-3">Ajouter une catégorie au catalogue</h1>
+		{{form(form)}}
+		</div>
+	{% endblock %}

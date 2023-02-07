@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Product
+{% endblock %}
+
+{% block body %}
+	{{include ('./nav.html.twig')}}
+
+	<div class="container">
+		<h1 class="text-center mt-3">Editer un produit du catalogue</h1>
+		{{form(form)}}
+		</div>
+	{% endblock %}
