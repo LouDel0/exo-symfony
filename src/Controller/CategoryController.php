@@ -23,7 +23,7 @@ class CategoryController extends AbstractController
             $em->persist($category);
             $em->flush();
 
-            $this->addFlash('success', 'Catégorie insérée avec succès');
+            $this->addFlash('success', 'Catégorie créée avec succès');
             return $this->redirectToRoute('app_home');
         }
 

@@ -22,7 +22,7 @@ class ProductController extends AbstractController
             $em->persist($product);
             $em->flush();
 
-            $this->addFlash('success', 'Produit inséré avec succès');
+            $this->addFlash('success', 'Produit créé avec succès');
             return $this->redirectToRoute('app_home');
         }
 
