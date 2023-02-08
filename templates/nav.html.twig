@@ -53,6 +53,8 @@
 							{% if app.user %}
 								{{app.user.firstname}}
 								{{app.user.lastname}}
+								{{app.user.roles[0]}}
+								{{dump(app.user.roles)}}
 							{% endif %}
 						</a>
 						<ul class="dropdown-menu" style="margin-right">
