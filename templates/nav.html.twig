@@ -53,8 +53,10 @@
 							{% if app.user %}
 								{{app.user.firstname}}
 								{{app.user.lastname}}
-								{{app.user.roles[0]}}
-								{{dump(app.user.roles)}}
+
+								{% if is_granted('ROLE_ADMIN') %}
+									<p class="text-secondary">(Admin)</p>
+								{% endif %}
 							{% endif %}
 						</a>
 						<ul class="dropdown-menu" style="margin-right">
@@ -73,7 +75,10 @@
 					</li>
 					<li class="nav-item">
 						{% if app.user %}
-							<img alt='logo' style="height : 40px" class='rounded-pill' src={{app.user.image}}>
+							{% if app.user.image is null or app.user.image is empty %}
+								{% else %}
+									<img alt='logo' style="height : 40px" class='rounded-pill' src={{app.user.image}}>
+							{% endif %}
 						{% endif %}
 					</li>
 				</ul>
